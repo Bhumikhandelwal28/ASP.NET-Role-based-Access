@@ -1,0 +1,61 @@
+@model LoginViewModel
+@{ ViewData["Title"] = "Login"; Layout = null; }
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login – UserRole System</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body class="auth-page">
+<div class="auth-container">
+    <div class="auth-card">
+        <div class="auth-header">
+    
+            <h2>Welcome Back</h2>
+            <p>Sign in to your account</p>
+        </div>
+
+        <form asp-action="Login" method="post">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+
+            <div class="form-group">
+                <label asp-for="Email">Email Address</label>
+                <input asp-for="Email" type="email" placeholder="you@example.com" class="form-input" />
+                <span asp-validation-for="Email" class="field-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Password">Password</label>
+                <div class="input-wrapper">
+                    <input asp-for="Password" type="password" placeholder="••••••••" class="form-input" id="pwdInput" />
+                    <button type="button" class="toggle-pwd" onclick="togglePwd()">👁</button>
+                </div>
+                <span asp-validation-for="Password" class="field-error"></span>
+            </div>
+
+            <div class="form-row">
+                <label class="checkbox-label">
+                    <input asp-for="RememberMe" type="checkbox" />
+                    <span>Remember me</span>
+                </label>
+                <a href="/Account/ChangePassword" class="link-muted">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+
+            <p class="auth-footer">Don't have an account? <a href="/Account/Register">Register here</a></p>
+        </form>
+    </div>
+</div>
+<script>
+    function togglePwd() {
+        const i = document.getElementById('pwdInput');
+        i.type = i.type === 'password' ? 'text' : 'password';
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+@model IList<UserRoleApp.Models.Users>
+@{ ViewData["Title"] = "Faculty"; }
+
+<div class="page-header">
+    <div>
+        <h1>Faculty</h1>
+        <p class="page-sub">@Model.Count faculty member(s) registered</p>
+    </div>
+    <a href="/Admin/Index" class="btn btn-outline">← Back</a>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h3>All Faculty</h3>
+        <input type="text" placeholder="Search..." class="search-input" oninput="filterTable(this)" data-table="facultyTable" />
+    </div>
+    <div class="table-wrapper">
+        <table class="data-table" id="facultyTable">
+            <thead>
+                <tr><th>Name</th><th>Email</th><th>Department</th><th>Joined</th><th>Actions</th></tr>
+            </thead>
+            <tbody>
+                @foreach (var f in Model)
+                {
+                    <tr>
+                        <td><strong>@f.FullName</strong></td>
+                        <td>@f.Email</td>
+                        <td>@(f.Department ?? "—")</td>
+                        <td>@f.CreatedAt.ToString("MMM dd, yyyy")</td>
+                        <td class="actions">
+                            <a href="/Admin/Edit/@f.Id" class="btn-sm btn-edit">Edit</a>
+                            <form asp-action="Delete" asp-controller="Admin" method="post" style="display:inline"
+                                  onsubmit="return confirm('Delete @f.FullName?')">
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" name="id" value="@f.Id" />
+                                <button type="submit" class="btn-sm btn-delete">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+@section Scripts {
+<script>
+function filterTable(inp) {
+    const q = inp.value.toLowerCase();
+    const tbl = document.getElementById(inp.dataset.table);
+    tbl.querySelectorAll('tbody tr').forEach(r => r.style.display = r.textContent.toLowerCase().includes(q) ? '' : 'none');
+}
+</script>}

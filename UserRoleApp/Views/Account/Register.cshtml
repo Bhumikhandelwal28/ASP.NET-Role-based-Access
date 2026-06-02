@@ -1,0 +1,67 @@
+@model RegisterViewModel
+@{ ViewData["Title"] = "Register"; Layout = null; }
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register – UserRole System</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body class="auth-page">
+<div class="auth-container">
+    <div class="auth-card auth-card-wide">
+        <div class="auth-header">
+          
+            <h2>Create Account</h2>
+            <p>Join as Faculty or Student</p>
+        </div>
+
+        <form asp-action="Register" method="post">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label asp-for="FullName">Full Name</label>
+                    <input asp-for="FullName" placeholder="John Doe" class="form-input" />
+                    <span asp-validation-for="FullName" class="field-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email">Email Address</label>
+                    <input asp-for="Email" type="email" placeholder="you@example.com" class="form-input" />
+                    <span asp-validation-for="Email" class="field-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Department">Department <span class="optional">(optional)</span></label>
+                    <input asp-for="Department" placeholder="e.g. Computer Science" class="form-input" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Role">Role</label>
+                    <select asp-for="Role" class="form-input form-select">
+                        <option value="">-- Select Role --</option>
+                        <option value="Faculty">Faculty</option>
+                        <option value="Student">Student</option>
+                    </select>
+                    <span asp-validation-for="Role" class="field-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password">Password</label>
+                    <input asp-for="Password" type="password" placeholder="Min. 6 characters" class="form-input" />
+                    <span asp-validation-for="Password" class="field-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ConfirmPassword">Confirm Password</label>
+                    <input asp-for="ConfirmPassword" type="password" placeholder="Repeat password" class="form-input" />
+                    <span asp-validation-for="ConfirmPassword" class="field-error"></span>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full" style="margin-top:1rem">Create Account</button>
+            <p class="auth-footer">Already have an account? <a href="/Account/Login">Sign in</a></p>
+        </form>
+    </div>
+</div>
+</body>
+</html>

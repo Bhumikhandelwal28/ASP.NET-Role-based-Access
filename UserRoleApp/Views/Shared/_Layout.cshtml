@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] – UserRole System</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="brand-icon">⬡</span> UserRole System
+        </div>
+        <div class="nav-links">
+            @if (User.Identity?.IsAuthenticated == true)
+            {
+                <span class="nav-user"> @User.Identity.Name</span>
+                @if (User.IsInRole("Admin"))
+                {
+                    <a href="/Admin/Index" class="nav-link">Dashboard</a>
+                    <a href="/Admin/Students" class="nav-link">Students</a>
+                    <a href="/Admin/Faculty" class="nav-link">Faculty</a>
+                }
+                @if (User.IsInRole("Faculty"))
+                {
+                    <a href="/Faculty/Index" class="nav-link">Dashboard</a>
+                    <a href="/Faculty/Students" class="nav-link">Students</a>
+                }
+                @if (User.IsInRole("Student"))
+                {
+                    <a href="/Student/Index" class="nav-link">My Profile</a>
+                }
+                <form action="/Account/Logout" method="post" style="display:inline">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn-logout">Logout</button>
+                </form>
+            }
+            else
+            {
+                <a href="/Account/Login" class="nav-link">Login</a>
+                <a href="/Account/Register" class="btn-nav-register">Register</a>
+            }
+        </div>
+    </nav>
+
+    <main class="main-content">
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success">@TempData["Success"]</div>
+        }
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-error"> @TempData["Error"]</div>
+        }
+        @RenderBody()
+    </main>
+
+    <footer class="footer">
+        <p>&copy; @DateTime.Now.Year UserRole System. All rights reserved.</p>
+    </footer>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

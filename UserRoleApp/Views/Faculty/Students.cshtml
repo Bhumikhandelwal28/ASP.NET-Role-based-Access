@@ -1,0 +1,41 @@
+@model IList<UserRoleApp.Models.Users>
+@{ ViewData["Title"] = "Students"; }
+
+<div class="page-header">
+    <div><h1>Students</h1><p class="page-sub">@Model.Count student(s) enrolled</p></div>
+    <a href="/Faculty/Index" class="btn btn-outline"> Dashboard</a>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h3>Student List</h3>
+        <input type="text" placeholder="Search students..." class="search-input" oninput="filterTable(this)" data-table="sTable" />
+    </div>
+    <div class="table-wrapper">
+        <table class="data-table" id="sTable">
+            <thead>
+                <tr><th>Name</th><th>Email</th><th>Department</th><th>Joined</th><th>Actions</th></tr>
+            </thead>
+            <tbody>
+                @foreach (var s in Model)
+                {
+                    <tr>
+                        <td><strong>@s.FullName</strong></td>
+                        <td>@s.Email</td>
+                        <td>@(s.Department ?? "—")</td>
+                        <td>@s.CreatedAt.ToString("MMM dd, yyyy")</td>
+                        <td><a href="/Faculty/EditStudent/@s.Id" class="btn-sm btn-edit">Edit</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+@section Scripts {
+<script>
+function filterTable(inp) {
+    const q = inp.value.toLowerCase();
+    document.getElementById(inp.dataset.table).querySelectorAll('tbody tr')
+        .forEach(r => r.style.display = r.textContent.toLowerCase().includes(q) ? '' : 'none');
+}
+</script>}
