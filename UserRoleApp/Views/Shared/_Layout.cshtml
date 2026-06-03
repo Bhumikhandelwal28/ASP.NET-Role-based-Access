@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] – UserRole System</title>
     <link rel="stylesheet" href="~/css/site.css" />
+
+    
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-brand">
-            <span class="brand-icon">⬡</span> UserRole System
+            <span class="brand-icon">⬡</span> @localizer["1"]
         </div>
         <div class="nav-links">
             @if (User.Identity?.IsAuthenticated == true)
@@ -17,30 +19,39 @@
                 <span class="nav-user"> @User.Identity.Name</span>
                 @if (User.IsInRole("Admin"))
                 {
-                    <a href="/Admin/Index" class="nav-link">Dashboard</a>
-                    <a href="/Admin/Students" class="nav-link">Students</a>
-                    <a href="/Admin/Faculty" class="nav-link">Faculty</a>
+                    <a href="/Admin/Index" class="nav-link">@localizer["2"]</a>
+                    <a href="/Admin/Students" class="nav-link">@localizer["3"]</a>
+                    <a href="/Admin/Faculty" class="nav-link">@localizer["4"]</a>
                 }
                 @if (User.IsInRole("Faculty"))
                 {
-                    <a href="/Faculty/Index" class="nav-link">Dashboard</a>
-                    <a href="/Faculty/Students" class="nav-link">Students</a>
+                    <a href="/Faculty/Index" class="nav-link">@localizer["2"]</a>
+                    <a href="/Faculty/Students" class="nav-link">@localizer["4"]</a>
                 }
                 @if (User.IsInRole("Student"))
                 {
-                    <a href="/Student/Index" class="nav-link">My Profile</a>
+                    <a href="/Student/Index" class="nav-link">@localizer["5"]</a>
                 }
                 <form action="/Account/Logout" method="post" style="display:inline">
                     @Html.AntiForgeryToken()
-                    <button type="submit" class="btn-logout">Logout</button>
+                    <button type="submit" class="btn-logout">@localizer["6"]</button>
                 </form>
             }
             else
             {
-                <a href="/Account/Login" class="nav-link">Login</a>
-                <a href="/Account/Register" class="btn-nav-register">Register</a>
+                <a href="/Account/Login" class="nav-link">@localizer["7"]</a>
+                <a href="/Account/Register" class="btn-nav-register">@localizer["8"]</a>
             }
+            <div class="lang-selector" style="position: relative; display: inline-block;">
+                <select onchange="location = this.value;" style="padding: 4px 8px; border: 1px solid #ccc; border-radius: 4px; background-color: #fff; cursor: pointer;">
+                    <option value="">🌐 @System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToUpper()</option>
+                    <option value="/Language/Index?culture=en">English (EN)</option>
+                    <option value="/Language/Index?culture=fr">Français (FR)</option>
+                    <option value="/Language/Index?culture=de">Deutsch (DE)</option>
+                </select>
+            </div>
         </div>
+        
     </nav>
 
     <main class="main-content">
@@ -56,7 +67,7 @@
     </main>
 
     <footer class="footer">
-        <p>&copy; @DateTime.Now.Year UserRole System. All rights reserved.</p>
+        <p>&copy; @DateTime.Now.Year @localizer["9"]</p>
     </footer>
 
     @await RenderSectionAsync("Scripts", required: false)

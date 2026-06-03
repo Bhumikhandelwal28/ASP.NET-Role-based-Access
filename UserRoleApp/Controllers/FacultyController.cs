@@ -45,16 +45,33 @@ namespace UserRoleApp.Controllers
         }
 
         [HttpPost, ValidateAntiForgeryToken]
+       
         public async Task<IActionResult> EditStudent(EditUserViewModel model)
         {
+            ModelState.Remove(nameof(model.Email));
+
             if (!ModelState.IsValid) return View(model);
 
             var user = await _userManager.FindByIdAsync(model.Id);
             if (user == null) return NotFound();
 
-            user.FullName   = model.FullName;
+            
+            var roles = await _userManager.GetRolesAsync(user);
+            if (!roles.Contains("Student")) return Forbid();
+
+            
+            user.FullName = model.FullName;
             user.Department = model.Department;
-            await _userManager.UpdateAsync(user);
+
+            var result = await _userManager.UpdateAsync(user);
+            if (!result.Succeeded)
+            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+                return View(model);
+            }
 
             TempData["Success"] = "Student updated successfully.";
             return RedirectToAction("Students");

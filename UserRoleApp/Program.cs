@@ -42,8 +42,10 @@ var secretKey = Encoding.UTF8.GetBytes(jwt["SecretKey"]!);
 
 builder.Services.AddAuthentication(options =>
 {
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+    options.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
+    options.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
+    options.DefaultSignInScheme = IdentityConstants.ApplicationScheme;
 })
 .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, o =>
 {
@@ -67,7 +69,6 @@ builder.Services.AddAuthentication(options =>
         }
     };
 });
-
 builder.Services.AddAuthorization(o =>
 {
     o.AddPolicy("AdminOnly",      p => p.RequireRole("Admin"));
@@ -79,7 +80,17 @@ builder.Services.AddAuthorization(o =>
 
 builder.Services.AddScoped<SeedService>();
 builder.Services.AddScoped<JwtService>();
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+    .AddViewLocalization();
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    var supportedCultures = new[] { "en","fr","de"};
+    options.AddSupportedCultures(supportedCultures)
+           .AddSupportedUICultures(supportedCultures)
+           .SetDefaultCulture(supportedCultures[0]);
+});
+
 builder.Services.AddEndpointsApiExplorer();
 
 
@@ -139,6 +150,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseRequestLocalization();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();

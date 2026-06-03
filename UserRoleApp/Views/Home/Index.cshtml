@@ -1,32 +1,16 @@
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer localizer
 @{
     ViewData["Title"] = "Home";
 }
 
 <div class="hero">
     <div class="hero-content">
-        <h1>Welcome to <span class="brand-text">UserRole System</span></h1>
-        <p>A secure role-based access control system with JWT authentication.</p>
+        <h1>@localizer["website_wel"]<span class="brand-text">@localizer["user_string"]</span></h1>
+        <p>@localizer["jwt_web"]</p>
         <div class="hero-buttons">
-            <a href="/Account/Login" class="btn btn-primary">Login</a>
-            <a href="/Account/Register" class="btn btn-outline">Register</a>
+            <a href="/Account/Login" class="btn btn-primary">@localizer["login"]</a>
+            <a href="/Account/Register" class="btn btn-outline">@localizer["register"]</a>
         </div>
     </div>
-    <div class="role-cards">
-        <div class="role-card">
-            <div class="role-icon admin-icon">🛡️</div>
-            <h3>Admin</h3>
-            <p>Manage all users, view & edit faculty and students, full system access.</p>
-        </div>
-        <div class="role-card">
-            <div class="role-icon faculty-icon">👨‍🏫</div>
-            <h3>Faculty</h3>
-            <p>View and edit student details, manage your department.</p>
-        </div>
-        <div class="role-card">
-            <div class="role-icon student-icon">🎓</div>
-            <h3>Student</h3>
-            <p>View your own profile and personal information.</p>
-        </div>
-    </div>
-    
 </div>

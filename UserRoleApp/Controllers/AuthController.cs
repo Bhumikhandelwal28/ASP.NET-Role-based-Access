@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using UserRoleApp.Models;
@@ -9,8 +11,8 @@ namespace UserRoleApp.Controllers
     [ApiController]
     [Route("api/[controller]")]
 
-  
-   
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+
     public class AuthController : ControllerBase
     {
         private readonly UserManager<Users>        _userManager;
