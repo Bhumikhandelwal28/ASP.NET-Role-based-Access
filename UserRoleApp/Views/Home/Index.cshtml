@@ -1,16 +1,17 @@
-@using Microsoft.AspNetCore.Mvc.Localization
-@inject IViewLocalizer localizer
 @{
-    ViewData["Title"] = "Home";
+    ViewData["Title"] = SharedLocalizer["1"].Value;
 }
 
 <div class="hero">
     <div class="hero-content">
-        <h1>@localizer["website_wel"]<span class="brand-text">@localizer["user_string"]</span></h1>
-        <p>@localizer["jwt_web"]</p>
+        <h1>
+            @SharedLocalizer["website_web"]
+            <span class="brand-text">@SharedLocalizer["1"]</span>
+        </h1>
+        <p>@SharedLocalizer["jwt_web"]</p>
         <div class="hero-buttons">
-            <a href="/Account/Login" class="btn btn-primary">@localizer["login"]</a>
-            <a href="/Account/Register" class="btn btn-outline">@localizer["register"]</a>
+            <a href="/Account/Login"    class="btn btn-primary">@SharedLocalizer["login"]</a>
+            <a href="/Account/Register" class="btn btn-outline">@SharedLocalizer["register"]</a>
         </div>
     </div>
 </div>

@@ -1,0 +1,45 @@
+﻿@model UserRoleApp.Models.Users
+@{
+    ViewData["Title"] = "Add Student";
+}
+
+<div class="page-header">
+    <div>
+        <h1>Add New Student</h1>
+        <p class="page-sub">Fill out the details below to enroll a new student.</p>
+    </div>
+    <a href="/Admin/Students" class="btn btn-outline">Back to List</a>
+</div>
+
+<div class="card" style="max-width: 600px; margin: 20px auto; padding: 20px;">
+    <form asp-action="AddStudent" method="post">
+        @Html.AntiForgeryToken()
+
+        <div style="margin-bottom: 15px;">
+            <label asp-for="FullName" style="display:block; margin-bottom: 5px; font-weight: bold;">Full Name</label>
+            <input asp-for="FullName" class="form-control" style="width: 100%; padding: 8px;" required />
+            <span asp-validation-for="FullName" style="color: red; font-size: 12px;"></span>
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label asp-for="Email" style="display:block; margin-bottom: 5px; font-weight: bold;">Email Address</label>
+            <input asp-for="Email" type="email" class="form-control" style="width: 100%; padding: 8px;" required />
+            <span asp-validation-for="Email" style="color: red; font-size: 12px;"></span>
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label asp-for="Department" style="display:block; margin-bottom: 5px; font-weight: bold;">Department</label>
+            <select asp-for="Department" class="form-control" style="width: 100%; padding: 8px;">
+                <option value="CSE">CSE</option>
+                <option value="ECE">ECE</option>
+                <option value="ME">ME</option>
+                <option value="CE">CE</option>
+            </select>
+            <span asp-validation-for="Department" style="color: red; font-size: 12px;"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px; margin-top: 10px;">
+            Save Student
+        </button>
+    </form>
+</div>

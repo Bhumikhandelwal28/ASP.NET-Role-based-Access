@@ -1,57 +1,96 @@
+@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IHtmlLocalizer<UserRoleApp.SharedResources> SharedLocalizer
+
+@{
+    var currentLang = System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower();
+
+  
+    var hasCookie = Context.Request.Cookies.ContainsKey(
+        Microsoft.AspNetCore.Localization.CookieRequestCultureProvider.DefaultCookieName);
+}
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="@currentLang">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] – UserRole System</title>
+    <title>@ViewData["Title"] – @SharedLocalizer["1"]</title>
     <link rel="stylesheet" href="~/css/site.css" />
-
-    
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-brand">
-            <span class="brand-icon">⬡</span> @localizer["1"]
+            <span class="brand-icon">⬡</span> @SharedLocalizer["1"]
         </div>
         <div class="nav-links">
             @if (User.Identity?.IsAuthenticated == true)
             {
-                <span class="nav-user"> @User.Identity.Name</span>
+                <span class="nav-user">@User.Identity.Name</span>
+
                 @if (User.IsInRole("Admin"))
                 {
-                    <a href="/Admin/Index" class="nav-link">@localizer["2"]</a>
-                    <a href="/Admin/Students" class="nav-link">@localizer["3"]</a>
-                    <a href="/Admin/Faculty" class="nav-link">@localizer["4"]</a>
+                    <a href="/Admin/Index" class="nav-link">@SharedLocalizer["2"]</a>
+                    <a href="/Admin/Students" class="nav-link">@SharedLocalizer["3"]</a>
+                    <a href="/Admin/Faculty" class="nav-link">@SharedLocalizer["4"]</a>
                 }
                 @if (User.IsInRole("Faculty"))
                 {
-                    <a href="/Faculty/Index" class="nav-link">@localizer["2"]</a>
-                    <a href="/Faculty/Students" class="nav-link">@localizer["4"]</a>
+                    <a href="/Faculty/Index" class="nav-link">@SharedLocalizer["2"]</a>
+                    <a href="/Faculty/Students" class="nav-link">@SharedLocalizer["3"]</a>
                 }
                 @if (User.IsInRole("Student"))
                 {
-                    <a href="/Student/Index" class="nav-link">@localizer["5"]</a>
+                    <a href="/Student/Index" class="nav-link">@SharedLocalizer["5"]</a>
                 }
+
                 <form action="/Account/Logout" method="post" style="display:inline">
                     @Html.AntiForgeryToken()
-                    <button type="submit" class="btn-logout">@localizer["6"]</button>
+                    <button type="submit" class="btn-logout">@SharedLocalizer["6"]</button>
                 </form>
             }
             else
             {
-                <a href="/Account/Login" class="nav-link">@localizer["7"]</a>
-                <a href="/Account/Register" class="btn-nav-register">@localizer["8"]</a>
+                <a href="/Account/Login" class="nav-link">@SharedLocalizer["login"]</a>
+                <a href="/Account/Register" class="btn-nav-register">@SharedLocalizer["register"]</a>
             }
-            <div class="lang-selector" style="position: relative; display: inline-block;">
-                <select onchange="location = this.value;" style="padding: 4px 8px; border: 1px solid #ccc; border-radius: 4px; background-color: #fff; cursor: pointer;">
-                    <option value="">🌐 @System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToUpper()</option>
-                    <option value="/Language/Index?culture=en">English (EN)</option>
-                    <option value="/Language/Index?culture=fr">Français (FR)</option>
-                    <option value="/Language/Index?culture=de">Deutsch (DE)</option>
+
+            <div class="lang-selector">
+                <select id="langSelect"
+                        title="@SharedLocalizer["lang_label"]"
+                        style="padding:4px 8px;border:1px solid #ccc;border-radius:4px;background:#fff;cursor:pointer;">
+
+                    @if (!hasCookie)
+                    {
+                        <option value="__auto__" selected="selected">🌐 Auto</option>
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                    }
+                    else if (currentLang == "fr")
+                    {
+                        <option value="__auto__">🌐 Auto</option>
+                        <option value="en">English</option>
+                        <option value="fr" selected="selected">Français</option>
+                        <option value="de">Deutsch</option>
+                    }
+                    else if (currentLang == "de")
+                    {
+                        <option value="__auto__">🌐 Auto</option>
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="de" selected="selected">Deutsch</option>
+                    }
+                    else
+                    {
+                        <option value="__auto__">🌐 Auto</option>
+                        <option value="en" selected="selected">English</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                    }
                 </select>
             </div>
         </div>
-        
     </nav>
 
     <main class="main-content">
@@ -61,14 +100,32 @@
         }
         @if (TempData["Error"] != null)
         {
-            <div class="alert alert-error"> @TempData["Error"]</div>
+            <div class="alert alert-error">@TempData["Error"]</div>
         }
+
         @RenderBody()
     </main>
 
     <footer class="footer">
-        <p>&copy; @DateTime.Now.Year @localizer["9"]</p>
+        <p>&copy; @DateTime.Now.Year @SharedLocalizer["9"]</p>
     </footer>
+
+    <script>
+            (function () {
+                var sel = document.getElementById('langSelect');
+                if (!sel) return;
+                var currentPath = window.location.pathname + window.location.search;
+
+                sel.addEventListener('change', function () {
+                    var val = this.value;
+                    if (val === '__auto__') {
+                        window.location.href = '/Language/Reset?returnUrl=' + encodeURIComponent(currentPath);
+                    } else {
+                        window.location.href = '/Language/Index?culture=' + val + '&returnUrl=' + encodeURIComponent(currentPath);
+                    }
+                });
+            })();
+    </script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

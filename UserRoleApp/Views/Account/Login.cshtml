@@ -1,61 +1,142 @@
 @model LoginViewModel
-@{ ViewData["Title"] = "Login"; Layout = null; }
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IHtmlLocalizer<UserRoleApp.SharedResources> SharedLocalizer
+
+@{
+    ViewData["Title"] = SharedLocalizer["login"].Value;
+    Layout = null;
+
+    var currentLang = System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower();
+
+    var hasCookie = Context.Request.Cookies.ContainsKey(
+        Microsoft.AspNetCore.Localization.CookieRequestCultureProvider.DefaultCookieName);
+}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="@currentLang">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login – UserRole System</title>
+    <title>@SharedLocalizer["login"] – @SharedLocalizer["1"]</title>
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body class="auth-page">
-<div class="auth-container">
-    <div class="auth-card">
-        <div class="auth-header">
-    
-            <h2>Welcome Back</h2>
-            <p>Sign in to your account</p>
-        </div>
 
-        <form asp-action="Login" method="post">
-            @Html.AntiForgeryToken()
-            <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+   
+    <div style="position: absolute; top: 20px; right: 20px; z-index: 1000;">
+        <select id="loginLangSelect"
+                title="@SharedLocalizer["lang_label"]"
+                style="padding: 6px 12px; border: 1px solid #ccc; border-radius: 4px; background: #fff; cursor: pointer; font-size: .85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
 
-            <div class="form-group">
-                <label asp-for="Email">Email Address</label>
-                <input asp-for="Email" type="email" placeholder="you@example.com" class="form-input" />
-                <span asp-validation-for="Email" class="field-error"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Password">Password</label>
-                <div class="input-wrapper">
-                    <input asp-for="Password" type="password" placeholder="••••••••" class="form-input" id="pwdInput" />
-                    <button type="button" class="toggle-pwd" onclick="togglePwd()">👁</button>
-                </div>
-                <span asp-validation-for="Password" class="field-error"></span>
-            </div>
-
-            <div class="form-row">
-                <label class="checkbox-label">
-                    <input asp-for="RememberMe" type="checkbox" />
-                    <span>Remember me</span>
-                </label>
-                <a href="/Account/ChangePassword" class="link-muted">Forgot password?</a>
-            </div>
-
-            <button type="submit" class="btn btn-primary btn-full">Sign In</button>
-
-            <p class="auth-footer">Don't have an account? <a href="/Account/Register">Register here</a></p>
-        </form>
+            @if (!hasCookie)
+            {
+                <option value="__auto__" selected="selected">🌐 Auto</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+            }
+            else if (currentLang == "fr")
+            {
+                <option value="__auto__">🌐 Auto</option>
+                <option value="en">English</option>
+                <option value="fr" selected="selected">Français</option>
+                <option value="de">Deutsch</option>
+            }
+            else if (currentLang == "de")
+            {
+                <option value="__auto__">🌐 Auto</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="de" selected="selected">Deutsch</option>
+            }
+            else
+            {
+                <option value="__auto__">🌐 Auto</option>
+                <option value="en" selected="selected">English</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+            }
+        </select>
     </div>
-</div>
-<script>
-    function togglePwd() {
-        const i = document.getElementById('pwdInput');
-        i.type = i.type === 'password' ? 'text' : 'password';
-    }
-</script>
+
+    <div class="auth-container">
+        <div class="auth-card" style="position:relative;">
+            <a href="/"
+               style="position: absolute; top: 15px; right: 20px; text-decoration: none; color: #999; font-size: 1.5rem; line-height: 1; font-weight: 300; transition: color 0.2s;"
+               onmouseover="this.style.color='#333'"
+               onmouseout="this.style.color='#999'">
+                &times;
+            </a>
+            <div class="auth-header">
+                <h2>@SharedLocalizer["login_title"]</h2>
+                <p>@SharedLocalizer["login_subtitle"]</p>
+            </div>
+
+            <form asp-action="Login" method="post">
+                @Html.AntiForgeryToken()
+                <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+
+                <div class="form-group">
+                    <label asp-for="Email">@SharedLocalizer["login_email"]</label>
+                    <input asp-for="Email" type="email"
+                           placeholder="you@example.com" class="form-input" />
+                    <span asp-validation-for="Email" class="field-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Password">@SharedLocalizer["login_password"]</label>
+                    <div class="input-wrapper">
+                        <input asp-for="Password" type="password"
+                               placeholder="••••••••" class="form-input" id="pwdInput" />
+                        <button type="button" class="toggle-pwd" onclick="togglePwd()">👁</button>
+                    </div>
+                    <span asp-validation-for="Password" class="field-error"></span>
+                </div>
+
+                <div class="form-row">
+                    <label class="checkbox-label">
+                        <input asp-for="RememberMe" type="checkbox" />
+                        <span>@SharedLocalizer["login_remember"]</span>
+                    </label>
+                    <a href="/Account/ChangePassword" class="link-muted">
+                        @SharedLocalizer["login_forgot"]
+                    </a>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">
+                    @SharedLocalizer["login_submit"]
+                </button>
+
+                <p class="auth-footer">
+                    @SharedLocalizer["login_no_account"]
+                    <a href="/Account/Register">@SharedLocalizer["login_register_link"]</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+            function togglePwd() {
+                const i = document.getElementById('pwdInput');
+                i.type = i.type === 'password' ? 'text' : 'password';
+            }
+
+           
+            (function () {
+                var sel = document.getElementById('loginLangSelect');
+                if (!sel) return;
+
+                var currentPath = window.location.pathname + window.location.search;
+
+                sel.addEventListener('change', function () {
+                    var val = this.value;
+                    if (val === '__auto__') {
+                        window.location.href = '/Language/Reset?returnUrl=' + encodeURIComponent(currentPath);
+                    } else {
+                        window.location.href = '/Language/Index?culture=' + val + '&returnUrl=' + encodeURIComponent(currentPath);
+                    }
+                });
+            })();
+    </script>
 </body>
 </html>

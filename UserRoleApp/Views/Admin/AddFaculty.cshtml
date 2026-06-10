@@ -1,0 +1,48 @@
+﻿@model UserRoleApp.Models.Users
+@{
+    ViewData["Title"] = "Add Faculty";
+}
+
+<div class="page-header">
+    <div>
+        <h1>Add New Faculty Member</h1>
+        <p class="page-sub">Fill out the details below to provision a faculty account.</p>
+    </div>
+    <a href="/Admin/Index" class="btn btn-outline" style="border: 1px solid #ccc; padding: 8px 12px; border-radius: 4px; text-decoration: none; color: #333;">Back to Dashboard</a>
+</div>
+
+<div class="card" style="max-width: 600px; margin: 20px auto; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 8px; background: #fff;">
+    <form asp-action="AddFaculty" method="post">
+        @Html.AntiForgeryToken()
+
+        <div asp-validation-summary="ModelOnly" style="color: red; margin-bottom: 15px; font-size: 14px;"></div>
+
+        <div style="margin-bottom: 15px;">
+            <label asp-for="FullName" style="display:block; margin-bottom: 5px; font-weight: bold; color: #333;">Full Name</label>
+            <input asp-for="FullName" class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" placeholder="e.g., Bhumi Jain" required />
+            <span asp-validation-for="FullName" style="color: red; font-size: 12px;"></span>
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label asp-for="Email" style="display:block; margin-bottom: 5px; font-weight: bold; color: #333;">Email Address</label>
+            <input asp-for="Email" type="email" class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" placeholder="e.g., bhumi@yopmail.com" required />
+            <span asp-validation-for="Email" style="color: red; font-size: 12px;"></span>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <label asp-for="Department" style="display:block; margin-bottom: 5px; font-weight: bold; color: #333;">Department</label>
+            <select asp-for="Department" class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; background: #fff;">
+                <option value="Computer Science">Computer Science</option>
+                <option value="CSE">CSE</option>
+                <option value="ECE">ECE</option>
+                <option value="CE">CE</option>
+                <option value="ME">ME</option>
+            </select>
+            <span asp-validation-for="Department" style="color: red; font-size: 12px;"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; background-color: #3498db; color: white; border: none; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer;">
+            Save Faculty Member
+        </button>
+    </form>
+</div>

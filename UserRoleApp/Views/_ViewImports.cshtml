@@ -1,6 +1,8 @@
 @using UserRoleApp
 @using UserRoleApp.Models
 @using UserRoleApp.ViewModels
-@using Microsoft.AspNetCore.Mvc.Localization
-@inject IViewLocalizer localizer
+@using Microsoft.Extensions.Localization
+
+@inject IStringLocalizer<SharedResources> SharedLocalizer
+
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers

@@ -41,6 +41,8 @@
                     <th>Department</th>
                     <th>Role</th>
                     <th>Joined</th>
+                    <th>Created By</th>
+                    <th>Updated By</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -52,18 +54,47 @@
                         <td><strong>@user.FullName</strong></td>
                         <td>@user.Email</td>
                         <td>@(user.Department ?? "—")</td>
-                        <td><span class="badge badge-@role.ToLower()">@role</span></td>
-                        <td>@user.CreatedAt.ToString("MMM dd, yyyy")</td>
-                        <td class="actions">
-                            <a href="/Admin/Edit/@user.Id" class="btn-sm btn-edit">Edit</a>
-                            @if (role != "Admin")
+                        <td>
+                            @if (user.IsDeletionPending)
                             {
-                                <form asp-action="Delete" asp-controller="Admin" method="post" style="display:inline"
-                                      onsubmit="return confirm('Delete @user.FullName?')">
+                                <span class="badge" style="background-color: #e74c3c; color: white;">Removal Requested</span>
+                            }
+                            else
+                            {
+                                <span class="badge badge-@role.ToLower()">@role</span>
+                            }
+                        </td>
+                        <td>@user.CreatedAt.ToString("MMM dd, yyyy")</td>
+                        <td>@(user.CreatedBy ?? "—")</td>
+                        <td>
+                            @if (user.IsDeletionPending)
+                            {
+                                <span style="font-size: 12px; color: #e74c3c; display:block;"><strong>Reason:</strong> @user.DeletionRequestReason</span>
+                                <span style="font-size: 11px; color: #7f8c8d;">By: @user.UpdatedBy</span>
+                            }
+                            else
+                            {
+                                @(user.UpdatedBy ?? "—")
+                            }
+                        </td>
+                        <td class="actions">
+                            @if (user.IsDeletionPending)
+                            {
+                                <form asp-action="ApproveDeletion" asp-controller="Admin" method="post" style="display:inline">
                                     @Html.AntiForgeryToken()
                                     <input type="hidden" name="id" value="@user.Id" />
-                                    <button type="submit" class="btn-sm btn-delete">Delete</button>
+                                    <button type="submit" class="btn-sm btn-delete" onclick="return confirm('Permanently delete this user?')">Confirm Delete</button>
                                 </form>
+
+                                <form asp-action="RejectDeletion" asp-controller="Admin" method="post" style="display:inline">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="id" value="@user.Id" />
+                                    <button type="submit" class="btn-sm btn-edit" style="background-color: #2ecc71;">Reject Request</button>
+                                </form>
+                            }
+                            else
+                            {
+                                <a href="/Admin/Edit/@user.Id" class="btn-sm btn-edit">Edit</a>
                             }
                         </td>
                     </tr>

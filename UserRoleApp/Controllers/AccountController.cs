@@ -1,29 +1,35 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 using UserRoleApp.Models;
+using UserRoleApp.Resources;
 using UserRoleApp.ViewModels;
 
 namespace UserRoleApp.Controllers
 {
-    
     public class AccountController : Controller
     {
-        private readonly SignInManager<Users>      _signInManager;
-        private readonly UserManager<Users>        _userManager;
+        private readonly SignInManager<Users> _signInManager;
+        private readonly UserManager<Users> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IStringLocalizer<SharedResources> _loc;
 
-        public AccountController(SignInManager<Users> signInManager,
-            UserManager<Users> userManager, RoleManager<IdentityRole> roleManager)
+        public AccountController(
+            SignInManager<Users> signInManager,
+            UserManager<Users> userManager,
+            RoleManager<IdentityRole> roleManager,
+            IStringLocalizer<SharedResources> localizer)
         {
             _signInManager = signInManager;
-            _userManager   = userManager;
-            _roleManager   = roleManager;
+            _userManager = userManager;
+            _roleManager = roleManager;
+            _loc = localizer;
         }
 
+        // ── Login ───────────────────────────────────────────────────
         [HttpGet] public IActionResult Login() => View();
 
-        
         [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
@@ -35,23 +41,23 @@ namespace UserRoleApp.Controllers
 
             if (result.Succeeded)
             {
-                var user  = await _userManager.FindByEmailAsync(model.Email);
+                var user = await _userManager.FindByEmailAsync(model.Email);
                 var roles = await _userManager.GetRolesAsync(user!);
 
-                if (roles.Contains("Admin"))   return RedirectToAction("Index", "Admin");
+                if (roles.Contains("Admin")) return RedirectToAction("Index", "Admin");
                 if (roles.Contains("Faculty")) return RedirectToAction("Index", "Faculty");
                 if (roles.Contains("Student")) return RedirectToAction("Index", "Student");
                 return RedirectToAction("Index", "Home");
             }
 
-            ModelState.AddModelError("", "Invalid email or password.");
+           
+            ModelState.AddModelError("", _loc["login_invalid"]);
             return View(model);
         }
 
-       
+        // ── Register ────────────────────────────────────────────────
         [HttpGet] public IActionResult Register() => View(new RegisterViewModel());
 
-      
         [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
@@ -59,25 +65,25 @@ namespace UserRoleApp.Controllers
 
             if (model.Role.Equals("Admin", StringComparison.OrdinalIgnoreCase))
             {
-                ModelState.AddModelError("", "Admin accounts cannot be self-registered.");
+                ModelState.AddModelError("", _loc["register_admin_denied"]);
                 return View(model);
             }
 
             if (await _userManager.FindByEmailAsync(model.Email) != null)
             {
-                ModelState.AddModelError("", "Email already registered.");
+                ModelState.AddModelError("", _loc["register_email_taken"]);
                 return View(model);
             }
 
             var user = new Users
             {
-                FullName           = model.FullName,
-                UserName           = model.Email,
-                Email              = model.Email,
+                FullName = model.FullName,
+                UserName = model.Email,
+                Email = model.Email,
                 NormalizedUserName = model.Email.ToUpper(),
-                NormalizedEmail    = model.Email.ToUpper(),
-                Department         = model.Department,
-                SecurityStamp      = Guid.NewGuid().ToString()
+                NormalizedEmail = model.Email.ToUpper(),
+                Department = model.Department,
+                SecurityStamp = Guid.NewGuid().ToString()
             };
 
             var result = await _userManager.CreateAsync(user, model.Password);
@@ -97,10 +103,9 @@ namespace UserRoleApp.Controllers
             return RedirectToAction("Index", "Student");
         }
 
-     
+        // ── Change Password ─────────────────────────────────────────
         [HttpGet] public IActionResult ChangePassword() => View(new ChangePasswordViewModel());
 
-       
         [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
         {
@@ -109,7 +114,11 @@ namespace UserRoleApp.Controllers
             var user = await _userManager.FindByEmailAsync(model.Email)
                     ?? await _userManager.FindByNameAsync(model.Email);
 
-            if (user == null) { ModelState.AddModelError("", "User not found."); return View(model); }
+            if (user == null)
+            {
+                ModelState.AddModelError("", _loc["changepwd_user_notfound"]);
+                return View(model);
+            }
 
             await _userManager.RemovePasswordAsync(user);
             var result = await _userManager.AddPasswordAsync(user, model.NewPassword);
@@ -119,7 +128,7 @@ namespace UserRoleApp.Controllers
             return View(model);
         }
 
-        
+        // ── Logout ──────────────────────────────────────────────────
         [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {
@@ -127,7 +136,7 @@ namespace UserRoleApp.Controllers
             return RedirectToAction("Login");
         }
 
-
+        // ── Access Denied ────────────────────────────────────────────
         public IActionResult AccessDenied() => View();
     }
 }

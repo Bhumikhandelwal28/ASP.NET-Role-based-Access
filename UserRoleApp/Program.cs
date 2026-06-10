@@ -6,43 +6,45 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using UserRoleApp.Data;
 using UserRoleApp.Models;
+using UserRoleApp.Resources;
+using Microsoft.AspNetCore.Localization;
+using System.Globalization;
 using UserRoleApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
+// Database Context
 builder.Services.AddDbContext<AppDbContext>(o =>
     o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-
+// Identity Services
 builder.Services.AddIdentity<Users, IdentityRole>(o =>
 {
-    o.Password.RequireDigit           = true;
-    o.Password.RequiredLength         = 6;
-    o.Password.RequireUppercase       = false;
+    o.Password.RequireDigit = true;
+    o.Password.RequiredLength = 6;
+    o.Password.RequireUppercase = false;
     o.Password.RequireNonAlphanumeric = false;
-    o.SignIn.RequireConfirmedEmail     = false;
+    o.SignIn.RequireConfirmedEmail = false;
 })
 .AddEntityFrameworkStores<AppDbContext>()
 .AddDefaultTokenProviders();
 
-
+// Cookie Options
 builder.Services.ConfigureApplicationCookie(o =>
 {
-    o.LoginPath        = "/Account/Login";
-    o.LogoutPath       = "/Account/Logout";
+    o.LoginPath = "/Account/Login";
+    o.LogoutPath = "/Account/Logout";
     o.AccessDeniedPath = "/Account/AccessDenied";
-    o.ExpireTimeSpan   = TimeSpan.FromHours(1);
+    o.ExpireTimeSpan = TimeSpan.FromHours(1);
     o.SlidingExpiration = true;
 });
 
-
-var jwt       = builder.Configuration.GetSection("JwtSettings");
+// JWT Authentication Setup
+var jwt = builder.Configuration.GetSection("JwtSettings");
 var secretKey = Encoding.UTF8.GetBytes(jwt["SecretKey"]!);
 
 builder.Services.AddAuthentication(options =>
 {
-
     options.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
     options.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
     options.DefaultSignInScheme = IdentityConstants.ApplicationScheme;
@@ -69,48 +71,49 @@ builder.Services.AddAuthentication(options =>
         }
     };
 });
+
+// Authorization Policies
 builder.Services.AddAuthorization(o =>
 {
-    o.AddPolicy("AdminOnly",      p => p.RequireRole("Admin"));
-    o.AddPolicy("FacultyOnly",    p => p.RequireRole("Faculty"));
-    o.AddPolicy("StudentOnly",    p => p.RequireRole("Student"));
+    o.AddPolicy("AdminOnly", p => p.RequireRole("Admin"));
+    o.AddPolicy("FacultyOnly", p => p.RequireRole("Faculty"));
+    o.AddPolicy("StudentOnly", p => p.RequireRole("Student"));
     o.AddPolicy("AdminOrFaculty", p => p.RequireRole("Admin", "Faculty"));
 });
 
-
+// Custom App Services
 builder.Services.AddScoped<SeedService>();
 builder.Services.AddScoped<JwtService>();
-builder.Services.AddControllersWithViews()
-    .AddViewLocalization();
+
+// Localization Setup
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
-builder.Services.Configure<RequestLocalizationOptions>(options =>
-{
-    var supportedCultures = new[] { "en","fr","de"};
-    options.AddSupportedCultures(supportedCultures)
-           .AddSupportedUICultures(supportedCultures)
-           .SetDefaultCulture(supportedCultures[0]);
-});
 
+builder.Services.AddControllersWithViews()
+    .AddViewLocalization()
+    .AddDataAnnotationsLocalization(options => {
+        options.DataAnnotationLocalizerProvider = (type, factory) =>
+            factory.Create(typeof(SharedResources));
+    });
+
+// Swagger/API Explorer Setup
 builder.Services.AddEndpointsApiExplorer();
-
-
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title       = "UserRole API",
-        Version     = "v1",
+        Title = "UserRole API",
+        Version = "v1",
         Description = "JWT-protected API with Admin, Faculty, Student roles"
     });
 
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        Name         = "Authorization",
-        Type         = SecuritySchemeType.Http,
-        Scheme       = "bearer",
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer",
         BearerFormat = "JWT",
-        In           = ParameterLocation.Header,
-        Description  = "Enter your JWT token (Swagger adds Bearer prefix automatically)"
+        In = ParameterLocation.Header,
+        Description = "Enter your JWT token (Swagger adds Bearer prefix automatically)"
     });
 
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
@@ -131,13 +134,14 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-
+// Execute Database Seeder
 using (var scope = app.Services.CreateScope())
 {
     var seeder = scope.ServiceProvider.GetRequiredService<SeedService>();
     await seeder.SeedAsync();
 }
 
+// Development Environment Setup
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -150,12 +154,37 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-app.UseRequestLocalization();
+
+
+var supportedCultures = new[]
+{
+    new CultureInfo("en"),
+    new CultureInfo("de"),
+    new CultureInfo("fr")
+};
+
+var localizationOptions = new RequestLocalizationOptions
+{
+    DefaultRequestCulture = new RequestCulture("en"),
+    SupportedCultures = supportedCultures,
+    SupportedUICultures = supportedCultures
+};
+localizationOptions.RequestCultureProviders = new List<IRequestCultureProvider>
+{
+    new CookieRequestCultureProvider(),
+    new AcceptLanguageHeaderRequestCultureProvider()
+};
+
+
+app.UseRequestLocalization(localizationOptions);
+
 app.UseRouting();
+
 app.UseAuthentication();
 app.UseAuthorization();
-app.MapControllers();
 
+// Route Controllers and Views
+app.MapControllers();
 app.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

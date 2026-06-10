@@ -7,28 +7,20 @@
       "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:controllers\\facultycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\views\\admin\\faculty.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:views\\admin\\faculty.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\views\\faculty\\editstudent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:views\\faculty\\editstudent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\views\\faculty\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:views\\faculty\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\views\\admin\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:views\\admin\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\services\\seedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:services\\seedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\views\\faculty\\students.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -39,55 +31,40 @@
       "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\resources\\sharedresources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:resources\\sharedresources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\sharedresources.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:sharedresources.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\controllers\\languagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:controllers\\languagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\controllers\\userapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:controllers\\userapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Dell\\AppData\\Local\\SourceServer\\3a141a028116bc199dc1cfab3aa0ef8b88337690e8d848c3fda288f220148ff1\\UserRoleApp\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|c:\\users\\dell\\downloads\\userroleapp\\userroleapp\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3A7BEB00-8E40-BCEE-9CB9-4AE959EE0D30}|UserRoleApp.csproj|solutionrelative:views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -97,99 +74,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "Controllers\\AdminController.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAowDkAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T04:14:53.77Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SeedService.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Services\\SeedService.cs",
-              "RelativeDocumentMoniker": "Services\\SeedService.cs",
-              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Services\\SeedService.cs",
-              "RelativeToolTip": "Services\\SeedService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T04:12:48.817Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Students.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Faculty\\Students.cshtml",
-              "RelativeDocumentMoniker": "Views\\Faculty\\Students.cshtml",
-              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Faculty\\Students.cshtml",
-              "RelativeToolTip": "Views\\Faculty\\Students.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-03T04:07:59.273Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Faculty\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Faculty\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Faculty\\Index.cshtml",
-              "RelativeToolTip": "Views\\Faculty\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-03T04:07:56.636Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Student\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Student\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Student\\Index.cshtml",
-              "RelativeToolTip": "Views\\Student\\Index.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAwAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-03T04:06:37.189Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Admin\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Views\\Admin\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Admin\\Edit.cshtml",
-              "RelativeToolTip": "Views\\Admin\\Edit.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-03T04:05:52.559Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EditStudent.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Faculty\\EditStudent.cshtml",
-              "RelativeDocumentMoniker": "Views\\Faculty\\EditStudent.cshtml",
-              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Faculty\\EditStudent.cshtml",
-              "RelativeToolTip": "Views\\Faculty\\EditStudent.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-03T04:05:22.908Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -198,9 +84,138 @@
               "RelativeDocumentMoniker": "Controllers\\FacultyController.cs",
               "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Controllers\\FacultyController.cs",
               "RelativeToolTip": "Controllers\\FacultyController.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAkwDkAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T06:33:17.079Z",
+              "WhenOpened": "2026-06-10T05:25:45.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StudentController.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Controllers\\StudentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StudentController.cs",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Controllers\\StudentController.cs",
+              "RelativeToolTip": "Controllers\\StudentController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T05:25:27.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T05:25:24.487Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T05:24:48.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T04:20:18.882Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Students.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Faculty\\Students.cshtml",
+              "RelativeDocumentMoniker": "Views\\Faculty\\Students.cshtml",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Faculty\\Students.cshtml",
+              "RelativeToolTip": "Views\\Faculty\\Students.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAcAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-10T05:23:13.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Student\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Student\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Student\\Index.cshtml",
+              "RelativeToolTip": "Views\\Student\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-10T05:23:10.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAADcAAAAAAAAAAAAswDwAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-10T05:07:35.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAEUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-10T04:52:14.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SharedResources.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\SharedResources.cs",
+              "RelativeDocumentMoniker": "SharedResources.cs",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\SharedResources.cs",
+              "RelativeToolTip": "SharedResources.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T04:50:24.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SharedResources.resx",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Resources\\SharedResources.resx",
+              "RelativeDocumentMoniker": "Resources\\SharedResources.resx",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Resources\\SharedResources.resx",
+              "RelativeToolTip": "Resources\\SharedResources.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2026-06-10T04:47:31.839Z",
               "EditorCaption": ""
             },
             {
@@ -211,169 +226,61 @@
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAIMAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-02T09:16:38.245Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Users.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Models\\Users.cs",
-              "RelativeDocumentMoniker": "Models\\Users.cs",
-              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Models\\Users.cs",
-              "RelativeToolTip": "Models\\Users.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T09:10:34.78Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAgwFoAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T06:02:10.207Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Faculty.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Admin\\Faculty.cshtml",
-              "RelativeDocumentMoniker": "Views\\Admin\\Faculty.cshtml",
-              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Admin\\Faculty.cshtml",
-              "RelativeToolTip": "Views\\Admin\\Faculty.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACAAAABTAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-02T09:09:59.49Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-02T04:25:41.183Z",
+              "WhenOpened": "2026-06-10T04:32:28.457Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAJ4AAAAAAAAAAAAwwKsAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T04:32:04.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "LanguageController.cs",
               "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Controllers\\LanguageController.cs",
               "RelativeDocumentMoniker": "Controllers\\LanguageController.cs",
               "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Controllers\\LanguageController.cs",
               "RelativeToolTip": "Controllers\\LanguageController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwDYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T09:33:51.135Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "JwtService.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Services\\JwtService.cs",
-              "RelativeDocumentMoniker": "Services\\JwtService.cs",
-              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Services\\JwtService.cs",
-              "RelativeToolTip": "Services\\JwtService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T07:02:35.553Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "Controllers\\AccountController.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAowDEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T06:03:27.33Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T06:03:33.861Z",
+              "WhenOpened": "2026-06-10T04:21:27.281Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
-              "Title": "StudentController.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Controllers\\StudentController.cs",
-              "RelativeDocumentMoniker": "Controllers\\StudentController.cs",
-              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Controllers\\StudentController.cs",
-              "RelativeToolTip": "Controllers\\StudentController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T07:07:54.919Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-06-02T07:19:41.443Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "UserApiController.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Controllers\\UserApiController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserApiController.cs",
-              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Controllers\\UserApiController.cs",
-              "RelativeToolTip": "Controllers\\UserApiController.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAiwAsAAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T06:30:04.96Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\AppData\\Local\\SourceServer\\3a141a028116bc199dc1cfab3aa0ef8b88337690e8d848c3fda288f220148ff1\\UserRoleApp\\Program.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\SourceServer\\3a141a028116bc199dc1cfab3aa0ef8b88337690e8d848c3fda288f220148ff1\\UserRoleApp\\Program.cs",
-              "ToolTip": "C:\\Users\\Dell\\AppData\\Local\\SourceServer\\3a141a028116bc199dc1cfab3aa0ef8b88337690e8d848c3fda288f220148ff1\\UserRoleApp\\Program.cs",
-              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\SourceServer\\3a141a028116bc199dc1cfab3aa0ef8b88337690e8d848c3fda288f220148ff1\\UserRoleApp\\Program.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAswIoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T06:59:13.92Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
-              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAA9AAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "Views\\Admin\\Index.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAAsAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-02T06:21:57.295Z"
+              "WhenOpened": "2026-06-09T07:30:10.843Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\Dell\\Downloads\\UserRoleApp\\UserRoleApp\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T04:18:20.087Z",
+              "EditorCaption": ""
             }
           ]
         }

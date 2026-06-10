@@ -2,7 +2,10 @@
 @{ ViewData["Title"] = "Students"; }
 
 <div class="page-header">
-    <div><h1>Students</h1><p class="page-sub">@Model.Count student(s) enrolled</p></div>
+    <div><h1>Students</h1><p class="page-sub">@Model.Count student(s) enrolled</p>
+        <a href="/Faculty/AddStudent" class="btn btn-primary" style="margin-right: 10px;">+ Add Student</a>
+    </div>
+    
     <a href="/Faculty/Index" class="btn btn-outline"> Dashboard</a>
 </div>
 
@@ -24,8 +27,17 @@
                         <td>@s.Email</td>
                         <td>@(s.Department ?? "—")</td>
                         <td>@s.CreatedAt.ToString("MMM dd, yyyy")</td>
-                        <td><a href="/Faculty/EditStudent/@s.Id" class="btn-sm btn-edit">Edit</a></td>
+                        <td><a href="/Faculty/EditStudent/@s.Id" class="btn-sm btn-edit">Edit</a>
+                        <form asp-action="RequestDeletion" asp-controller="Faculty" method="post" style="display:inline"
+                        onsubmit="return promptForReason(this, '@s.FullName')">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="id" value="@s.Id" />
+                        <input type="hidden" name="reason" id="reason-@s.Id" value="" />
+                        <button type="submit" class="btn-sm btn-delete" style="background-color: #f39c12;">Request Removal</button>
+                        </form>
+                        </td>
                     </tr>
+                    
                 }
             </tbody>
         </table>
@@ -38,4 +50,12 @@ function filterTable(inp) {
     document.getElementById(inp.dataset.table).querySelectorAll('tbody tr')
         .forEach(r => r.style.display = r.textContent.toLowerCase().includes(q) ? '' : 'none');
 }
+        function promptForReason(form, studentName) {
+            const reason = prompt(`Why do you want to remove ${studentName}?`);
+            if (reason === null) return false; 
+
+            
+            form.querySelector('input[name="reason"]').value = reason;
+            return true;
+        }
 </script>}

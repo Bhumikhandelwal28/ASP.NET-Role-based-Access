@@ -1,21 +1,73 @@
 @model RegisterViewModel
-@{ ViewData["Title"] = "Register"; Layout = null; }
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IHtmlLocalizer<UserRoleApp.SharedResources> SharedLocalizer
+
+@{
+    ViewData["Title"] = SharedLocalizer["register"].Value;
+    Layout = null;
+
+    var currentLang = System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower();
+
+    var hasCookie = Context.Request.Cookies.ContainsKey(
+        Microsoft.AspNetCore.Localization.CookieRequestCultureProvider.DefaultCookieName);
+}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="@currentLang">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register – UserRole System</title>
+    <title>@SharedLocalizer["register"] – @SharedLocalizer["1"]</title>
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body class="auth-page">
+
+    <div style="position: absolute; top: 20px; right: 20px; z-index: 1000;">
+        <select id="loginLangSelect"
+                title="@SharedLocalizer["lang_label"]"
+                style="padding: 6px 12px; border: 1px solid #ccc; border-radius: 4px; background: #fff; cursor: pointer; font-size: .85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+
+            @if (!hasCookie)
+            {
+                <option value="__auto__" selected="selected">🌐 Auto</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+            }
+            else if (currentLang == "fr")
+            {
+                <option value="__auto__">🌐 Auto</option>
+                <option value="en">English</option>
+                <option value="fr" selected="selected">Français</option>
+                <option value="de">Deutsch</option>
+            }
+            else if (currentLang == "de")
+            {
+                <option value="__auto__">🌐 Auto</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="de" selected="selected">Deutsch</option>
+            }
+            else
+            {
+                <option value="__auto__">🌐 Auto</option>
+                <option value="en" selected="selected">English</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+            }
+        </select>
+    </div>
 <div class="auth-container">
-    <div class="auth-card auth-card-wide">
+    <div class="auth-card auth-card-wide" style="position:relative;">
+            <a href="/"
+               style="position: absolute; top: 15px; right: 20px; text-decoration: none; color: #999; font-size: 1.5rem; line-height: 1; font-weight: 300; transition: color 0.2s;"
+               onmouseover="this.style.color='#333'"
+               onmouseout="this.style.color='#999'">
+                &times;
+            </a>
         <div class="auth-header">
-          
-            <h2>Create Account</h2>
-            <p>Join as Faculty or Student</p>
+            <h2>@SharedLocalizer["register_title"]</h2>
+            <p>@SharedLocalizer["register_subtitle"]</p>
         </div>
 
         <form asp-action="Register" method="post">
@@ -24,42 +76,62 @@
 
             <div class="form-grid">
                 <div class="form-group">
-                    <label asp-for="FullName">Full Name</label>
+                    <label asp-for="FullName">@SharedLocalizer["register_fullname"]</label>
                     <input asp-for="FullName" placeholder="John Doe" class="form-input" />
                     <span asp-validation-for="FullName" class="field-error"></span>
                 </div>
+
                 <div class="form-group">
-                    <label asp-for="Email">Email Address</label>
-                    <input asp-for="Email" type="email" placeholder="you@example.com" class="form-input" />
+                    <label asp-for="Email">@SharedLocalizer["register_email"]</label>
+                    <input asp-for="Email" type="email"
+                           placeholder="you@example.com" class="form-input" />
                     <span asp-validation-for="Email" class="field-error"></span>
                 </div>
+
                 <div class="form-group">
-                    <label asp-for="Department">Department <span class="optional">(optional)</span></label>
-                    <input asp-for="Department" placeholder="e.g. Computer Science" class="form-input" />
+                    <label asp-for="Department">
+                        @SharedLocalizer["register_department"]
+                        <span class="optional">@SharedLocalizer["register_dept_optional"]</span>
+                    </label>
+                    <input asp-for="Department"
+                           placeholder="e.g. Computer Science" class="form-input" />
                 </div>
+
                 <div class="form-group">
-                    <label asp-for="Role">Role</label>
+                    <label asp-for="Role">@SharedLocalizer["register_role"]</label>
                     <select asp-for="Role" class="form-input form-select">
-                        <option value="">-- Select Role --</option>
-                        <option value="Faculty">Faculty</option>
-                        <option value="Student">Student</option>
+                        <option value="">@SharedLocalizer["register_role_select"]</option>
+                        <option value="Faculty">@SharedLocalizer["4"]</option>
+                        <option value="Student">@SharedLocalizer["3"]</option>
                     </select>
                     <span asp-validation-for="Role" class="field-error"></span>
                 </div>
+
                 <div class="form-group">
-                    <label asp-for="Password">Password</label>
-                    <input asp-for="Password" type="password" placeholder="Min. 6 characters" class="form-input" />
+                    <label asp-for="Password">@SharedLocalizer["register_password"]</label>
+                    <input asp-for="Password" type="password"
+                           placeholder="@SharedLocalizer["register_pwd_hint"]"
+                           class="form-input" />
                     <span asp-validation-for="Password" class="field-error"></span>
                 </div>
+
                 <div class="form-group">
-                    <label asp-for="ConfirmPassword">Confirm Password</label>
-                    <input asp-for="ConfirmPassword" type="password" placeholder="Repeat password" class="form-input" />
+                    <label asp-for="ConfirmPassword">@SharedLocalizer["register_confirm_pwd"]</label>
+                    <input asp-for="ConfirmPassword" type="password"
+                           placeholder="@SharedLocalizer["register_pwd_hint"]"
+                           class="form-input" />
                     <span asp-validation-for="ConfirmPassword" class="field-error"></span>
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-full" style="margin-top:1rem">Create Account</button>
-            <p class="auth-footer">Already have an account? <a href="/Account/Login">Sign in</a></p>
+            <button type="submit" class="btn btn-primary btn-full" style="margin-top:1rem">
+                @SharedLocalizer["register_submit"]
+            </button>
+
+            <p class="auth-footer">
+                @SharedLocalizer["register_have_account"]
+                <a href="/Account/Login">@SharedLocalizer["register_signin_link"]</a>
+            </p>
         </form>
     </div>
 </div>
